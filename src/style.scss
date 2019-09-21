@@ -168,12 +168,21 @@ $btn-circle-decor-dimensions: 13px;
 
   //active styles
   &.js-active {
+    @include transition-mix($duration: .15s);
+      
     color: $color-primary;
     
     &:before {
+      transition: all .15s linear 0s, 
+                  transform .15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
+      
       transform: translateX(-50%) scale(1.2);
       
       background-color: currentColor;
+    }
+    
+    &:after {
+      @include transition-mix($duration: .15s);
     }
   }
 }

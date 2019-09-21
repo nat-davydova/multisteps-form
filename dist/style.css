@@ -103,12 +103,25 @@ body a {
   display: none;
 }
 .multisteps-form__progress-btn.js-active {
+  transition-property: all;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
   color: #007bff;
 }
 .multisteps-form__progress-btn.js-active:before {
+  transition: all 0.15s linear 0s, -webkit-transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
+  transition: all 0.15s linear 0s, transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
+  transition: all 0.15s linear 0s, transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s, -webkit-transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
   -webkit-transform: translateX(-50%) scale(1.2);
           transform: translateX(-50%) scale(1.2);
   background-color: currentColor;
+}
+.multisteps-form__progress-btn.js-active:after {
+  transition-property: all;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
 }
 
 .multisteps-form__form {
