@@ -126,10 +126,21 @@ body a {
   position: relative;
 }
 
-.multisteps-form__panel.js-hidden {
+.multisteps-form__panel {
   display: none;
-  -webkit-transform: scale(0.4);
-          transform: scale(0.4);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   opacity: 0;
   visibility: hidden;
+}
+.multisteps-form__panel.js-active {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  display: block;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+  visibility: visible;
 }

@@ -191,14 +191,22 @@ $btn-circle-decor-dimensions: 13px;
 
 //multisteps panels styles
 .multisteps-form__panel {
+  display: none;
   
-  //hidden panels
-  &.js-hidden {
-    display: none;
+  transform: scale(1.2);
+  
+  opacity: 0;
+  visibility: hidden;
+  
+  //active panels
+  &.js-active {
+    @include transition-mix();
     
-    transform: scale(.4);
+    display: block;
     
-    opacity: 0;
-    visibility: hidden;
+    transform: scale(1);
+    
+    opacity: 1;
+    visibility: visible;
   }
 }

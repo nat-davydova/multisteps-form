@@ -2,7 +2,8 @@
 const DOMstrings = {
   stepsBtnClass: 'multisteps-form__progress-btn',
   stepsBtns: document.querySelectorAll(`.multisteps-form__progress-btn`),
-  stepsBar: document.querySelector('.multisteps-form__progress') };
+  stepsBar: document.querySelector('.multisteps-form__progress'),
+  stepFormPanels: document.querySelectorAll('.multisteps-form__panel') };
 
 
 //remove class from a set of items
@@ -35,6 +36,21 @@ const setActiveStep = activeStepNum => {
   });
 };
 
+//open active panel (and close unactive panels)
+const setActivePanel = activePanelNum => {
+
+  //remove active class from all the panels
+  removeClasses(DOMstrings.stepFormPanels, 'js-active');
+
+  //show active panel
+  DOMstrings.stepFormPanels.forEach((elem, index) => {
+    if (index === activePanelNum - 1) {
+      elem.classList.add('js-active');
+    }
+  });
+
+};
+
 //STEPS BAR CLICK FUNCTION
 DOMstrings.stepsBar.addEventListener('click', e => {
 
@@ -51,4 +67,6 @@ DOMstrings.stepsBar.addEventListener('click', e => {
   //set all steps before clicked (and clicked too) to active
   setActiveStep(activeStep);
 
+  //open active panel
+  setActivePanel(activeStep);
 });
