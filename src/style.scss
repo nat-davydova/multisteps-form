@@ -95,10 +95,72 @@ body {
   text-align: center;
 }
 
+//multisteps variables
+$color-secondary: #6c757d;
+
+$btn-offset-vert: 20px;
+$btn-circle-decor-dimensions: 13px;
+
 //multisteps progress styles
-.multisteps-form__progress-list {
-  display: flex;
-  justify-content: space-between;
+.multisteps-form__progress {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.multisteps-form__progress-btn {
+  position: relative;
+  top: $btn-offset-vert;
+  
+  margin-bottom: $btn-offset-vert;
+  
+  color: rgba($color-secondary, .7);
+  
+  border: none;
+  background-color: transparent;
+  outline: none !important;
+  
+  cursor: pointer;
+  
+  
+  //circle decoration
+  &:before {
+    @include position-absolute($top: - $btn-offset-vert, $left: 50%);
+    
+    display: block;
+    width: $btn-circle-decor-dimensions;
+    height: $btn-circle-decor-dimensions;
+    
+    content: '';
+    
+    transform: translateX(-50%);
+    
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    background-color: #fff;
+    
+    box-sizing: border-box;
+  }
+  
+  //line decoration
+  &:after {
+    @include position-absolute($top: (- $btn-offset-vert/1.5), $left: calc(50% + #{$btn-circle-decor-dimensions} / 2));
+  
+    display: block;
+    width: 100%;
+    height: 2px;
+    
+    content: '';
+    
+    background-color: currentColor;
+  }
+
+  //last child - without line decoration
+  &:last-child {
+    
+    &:after {
+      display: none;
+    }
+  }
 }
 
 //multisteps form styles
