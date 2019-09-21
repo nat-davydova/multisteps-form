@@ -191,18 +191,18 @@ $btn-circle-decor-dimensions: 13px;
 
 //multisteps panels styles
 .multisteps-form__panel {
-  display: none;
+  @include position-absolute($top: 0, $left: 0);
   
-  transform: scale(1.2);
+  width: 100%;
+  
+  transform: scale(1.1);
   
   opacity: 0;
   visibility: hidden;
   
   //active panels
   &.js-active {
-    @include transition-mix();
-    
-    display: block;
+    @include transition-mix;
     
     transform: scale(1);
     
