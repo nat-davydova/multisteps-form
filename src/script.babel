@@ -3,7 +3,11 @@ const DOMstrings = {
   stepsBtnClass: 'multisteps-form__progress-btn',
   stepsBtns: document.querySelectorAll(`.multisteps-form__progress-btn`),
   stepsBar: document.querySelector('.multisteps-form__progress'),
-  stepFormPanels: document.querySelectorAll('.multisteps-form__panel')
+  stepsForm: document.querySelector('.multisteps-form__form'),
+  stepFormPanelClass: 'multisteps-form__panel',
+  stepFormPanels: document.querySelectorAll('.multisteps-form__panel'),
+  stepPrevBtnClass: 'js-btn-prev',
+  stepNextBtnClass: 'js-btn-next'
 };
 
 //remove class from a set of items
@@ -14,6 +18,19 @@ const removeClasses = (elemSet, className) => {
     elem.classList.remove(className);
     
   });
+  
+};
+
+//return exect parent node of the element
+const findParent = (elem, parentClass) => {
+  
+  let currentNode = elem;
+
+  while(! (currentNode.classList.contains(parentClass))) {
+    currentNode = currentNode.parentNode;
+  }
+  
+  return currentNode;
   
 };
 
@@ -69,4 +86,34 @@ DOMstrings.stepsBar.addEventListener('click', e => {
   
   //open active panel
   setActivePanel(activeStep);
+});
+
+//PREV/NEXT BTNS CLICK
+DOMstrings.stepsForm.addEventListener('click', e => {
+  
+  const eventTarget = e.target;
+  
+  //check if we clicked on `PREV` or NEXT` buttons
+  if(! ( (eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`)) || (eventTarget.classList.contains(`${DOMstrings.stepNextBtnClass}`)) ) ) {
+    return;
+  }
+  
+  //find active panel
+  const activePanel = findParent(eventTarget, `${DOMstrings.stepFormPanelClass}`);
+  
+  let activePanelNum = Array.from(DOMstrings.stepFormPanels).indexOf(activePanel) + 1;
+  
+  //set active step and active panel onclick
+  if(eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`)) {
+    activePanelNum--;
+  
+  } else {
+    
+    activePanelNum++;
+  
+  }
+  
+  setActiveStep(activePanelNum);
+  setActivePanel(activePanelNum);
+  
 });
