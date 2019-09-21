@@ -94,3 +94,21 @@ body {
   }
   text-align: center;
 }
+
+//multisteps form styles
+.multisteps-form__form {
+  position: relative;
+}
+
+.multisteps-form__panel {
+  
+  //hidden panels
+  &.js-hidden {
+    display: none;
+    
+    transform: scale(.4);
+    
+    opacity: 0;
+    visibility: hidden;
+  }
+}
