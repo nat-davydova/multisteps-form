@@ -95,11 +95,18 @@ body {
   text-align: center;
 }
 
+//multisteps progress styles
+.multisteps-form__progress-list {
+  display: flex;
+  justify-content: space-between;
+}
+
 //multisteps form styles
 .multisteps-form__form {
   position: relative;
 }
 
+//multisteps panels styles
 .multisteps-form__panel {
   
   //hidden panels

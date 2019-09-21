@@ -58,6 +58,11 @@ body a {
   text-align: center;
 }
 
+.multisteps-form__progress-list {
+  display: flex;
+  justify-content: space-between;
+}
+
 .multisteps-form__form {
   position: relative;
 }
