@@ -63,3 +63,19 @@ body {
     background-color: $theme-font-color;
   }
 }
+
+//header styles
+.header {
+  max-width: 600px;
+  margin: 50px auto;
+  
+  text-align: center;
+}
+
+.header__title {
+  margin-bottom: 30px;
+  
+   font: {
+    size: 2.1rem;
+  }
+}
