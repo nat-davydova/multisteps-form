@@ -97,6 +97,7 @@ body {
 
 //multisteps variables
 $color-secondary: #6c757d;
+$color-primary: #007bff;
 
 $btn-offset-vert: 20px;
 $btn-circle-decor-dimensions: 13px;
@@ -109,9 +110,8 @@ $btn-circle-decor-dimensions: 13px;
 
 .multisteps-form__progress-btn {
   position: relative;
-  top: $btn-offset-vert;
   
-  margin-bottom: $btn-offset-vert;
+  padding-top: $btn-offset-vert;
   
   color: rgba($color-secondary, .7);
   
@@ -124,7 +124,7 @@ $btn-circle-decor-dimensions: 13px;
   
   //circle decoration
   &:before {
-    @include position-absolute($top: - $btn-offset-vert, $left: 50%);
+    @include position-absolute($top: 0, $left: 50%);
     
     display: block;
     width: $btn-circle-decor-dimensions;
@@ -139,11 +139,13 @@ $btn-circle-decor-dimensions: 13px;
     background-color: #fff;
     
     box-sizing: border-box;
+    
+    z-index: 3;
   }
   
   //line decoration
   &:after {
-    @include position-absolute($top: (- $btn-offset-vert/1.5), $left: calc(50% + #{$btn-circle-decor-dimensions} / 2));
+    @include position-absolute($top: $btn-offset-vert/4, $left: calc(-50% - #{$btn-circle-decor-dimensions} / 2));
   
     display: block;
     width: 100%;
@@ -152,13 +154,26 @@ $btn-circle-decor-dimensions: 13px;
     content: '';
     
     background-color: currentColor;
+  
+    z-index: 1;
   }
 
   //last child - without line decoration
-  &:last-child {
+  &:first-child {
     
     &:after {
       display: none;
+    }
+  }
+
+  //active styles
+  &.js-active {
+    color: $color-primary;
+    
+    &:before {
+      transform: translateX(-50%) scale(1.2);
+      
+      background-color: currentColor;
     }
   }
 }
