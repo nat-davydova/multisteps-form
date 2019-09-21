@@ -53,6 +53,25 @@ const setActiveStep = (activeStepNum) => {
   });
 };
 
+//get active panel
+const getActivePanel = () => {
+  
+  let activePanel;
+  
+  DOMstrings.stepFormPanels.forEach(elem => {
+    
+    if(elem.classList.contains('js-active')) {
+      
+      activePanel = elem;
+      
+    }
+    
+  });
+  
+  return activePanel;
+                                    
+};
+
 //open active panel (and close unactive panels)
 const setActivePanel = activePanelNum => {
   
@@ -62,11 +81,30 @@ const setActivePanel = activePanelNum => {
   //show active panel
   DOMstrings.stepFormPanels.forEach((elem, index) => {
     if(index === (activePanelNum - 1)) {
+      
       elem.classList.add('js-active');
+   
+      setFormHeight(elem);
+      
     }
   })
   
 };
+
+//set form height equal to current panel height
+const formHeight = (activePanel) => {
+  
+  const activePanelHeight = activePanel.offsetHeight;
+  
+  DOMstrings.stepsForm.style.height = `${activePanelHeight}px`;
+  
+};
+
+const setFormHeight = () => {
+  const activePanel = getActivePanel();
+
+  formHeight(activePanel);
+}
 
 //STEPS BAR CLICK FUNCTION
 DOMstrings.stepsBar.addEventListener('click', e => {
@@ -94,7 +132,8 @@ DOMstrings.stepsForm.addEventListener('click', e => {
   const eventTarget = e.target;
   
   //check if we clicked on `PREV` or NEXT` buttons
-  if(! ( (eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`)) || (eventTarget.classList.contains(`${DOMstrings.stepNextBtnClass}`)) ) ) {
+  if(! ( (eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`)) || (eventTarget.classList.contains(`${DOMstrings.stepNextBtnClass}`)) ) ) 
+  {
     return;
   }
   
@@ -117,3 +156,7 @@ DOMstrings.stepsForm.addEventListener('click', e => {
   setActivePanel(activePanelNum);
   
 });
+
+//SETTING PROPER FORM HEIGHT ONLOAD
+window.addEventListener('load', setFormHeight, false);
+window.addEventListener('resize', setFormHeight, false);
