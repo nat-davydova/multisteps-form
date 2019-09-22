@@ -60,7 +60,7 @@ body a {
 
 .multisteps-form__progress {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 }
 
 .multisteps-form__progress-btn {
@@ -71,10 +71,16 @@ body a {
   position: relative;
   padding-top: 20px;
   color: rgba(108, 117, 125, 0.7);
+  text-indent: -9999px;
   border: none;
   background-color: transparent;
   outline: none !important;
   cursor: pointer;
+}
+@media (min-width: 500px) {
+  .multisteps-form__progress-btn {
+    text-indent: 0;
+  }
 }
 .multisteps-form__progress-btn:before {
   position: absolute;

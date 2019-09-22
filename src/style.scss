@@ -105,7 +105,7 @@ $btn-circle-decor-dimensions: 13px;
 //multisteps progress styles
 .multisteps-form__progress {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 }
 
 .multisteps-form__progress-btn {
@@ -117,11 +117,17 @@ $btn-circle-decor-dimensions: 13px;
   
   color: rgba($color-secondary, .7);
   
+  text-indent: -9999px;
+  
   border: none;
   background-color: transparent;
   outline: none !important;
   
   cursor: pointer;
+  
+  @media (min-width: 500px) {
+    text-indent: 0;
+  }
   
   
   //circle decoration
