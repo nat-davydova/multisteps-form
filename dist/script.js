@@ -168,19 +168,17 @@ window.addEventListener('resize', setFormHeight, false);
 
 //changing animation via animation select !!!YOU DON'T NEED THIS CODE (if you want to change animation type, just change form panels data-attr)
 
-const getAnimationType = () => DOMstrings.stepFormPanels[0].dataset.animation;
-
-const setAnimationClass = animationType => {
-  DOMstrings.stepFormPanels.forEach(elem => {
-    elem.classList.add(`${DOMstrings.stepFormPanelClass}--${animationType}`);
-  });
-};
-
 const setAnimationType = newType => {
   DOMstrings.stepFormPanels.forEach(elem => {
     elem.dataset.animation = newType;
   });
 };
 
-//default animation onload
-setAnimationClass(getAnimationType());
+//selector onchange - changing animation
+const animationSelect = document.querySelector('.pick-animation__select');
+
+animationSelect.addEventListener('change', () => {
+  const newAnimationType = animationSelect.value;
+
+  setAnimationType(newAnimationType);
+});
