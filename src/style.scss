@@ -205,18 +205,65 @@ $btn-circle-decor-dimensions: 13px;
   
   width: 100%;
   
-  transform: scale(1.1);
-  
   opacity: 0;
   visibility: hidden;
   
   //active panels
-  &.js-active {
-    @include transition-mix;
-    
-    transform: scale(1);
-    
+  &.js-active { 
     opacity: 1;
     visibility: visible;
+  }
+  
+  //scaleOut animation
+  &[data-animation="scaleOut"] {
+    transform: scale(1.1);
+    
+    &.js-active {
+      @include transition-mix;
+    
+      transform: scale(1);
+    }
+  }
+  
+  //slideHorz animation
+  &[data-animation="slideHorz"] {
+    left: 50px;
+    
+    &.js-active {
+      @include transition-mix($duration: .25s, $timing: cubic-bezier(0.2, 1.13, 0.38, 1.43));
+    
+      left: 0;
+    }
+  }
+  
+  //slideVert animation
+  &[data-animation="slideVert"] {
+    top: 30px;
+    
+    &.js-active {
+      @include transition-mix();
+    
+      top: 0;
+    }
+  }
+  
+  //fadeIn animation
+  &[data-animation="fadeIn"] {
+
+    
+    &.js-active {
+      @include transition-mix($duration: .3s);
+    }
+  }
+  
+  //scaleOut
+  &[data-animation="scaleIn"] {
+    transform: scale(.9);
+    
+    &.js-active {
+      @include transition-mix;
+    
+      transform: scale(1);
+    }
   }
 }
