@@ -58,6 +58,10 @@ body a {
   text-align: center;
 }
 
+.content__title--m-sm {
+  margin-bottom: 10px;
+}
+
 .multisteps-form__progress {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));

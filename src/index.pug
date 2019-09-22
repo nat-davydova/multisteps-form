@@ -9,9 +9,26 @@ header.header
   
   //content inner
   .content__inner
-  
-    //content title
-    h2.content__title Click on steps, 'Prev' and 'Next' buttons
+    
+    .container
+    
+      //content title
+      h2.content__title.content__title--m-sm Pick animation type
+      
+      //animations form
+      form.pick-animation.my-4
+        .form-row
+          .col-5.m-auto
+
+            select.pick-animation__select.form-control
+              option(selected) ScaleIn
+              option SlideHorz
+              option SlideVert
+              option Opacity
+              option ScaleOut
+    
+      //content title
+      h2.content__title Click on steps, 'Prev' and 'Next' buttons
     
     .container
     
