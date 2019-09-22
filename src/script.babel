@@ -176,4 +176,11 @@ const setAnimationClass = (animationType) => {
   })
 };
 
+const setAnimationType = (newType) => {
+  DOMstrings.stepFormPanels.forEach(elem => {
+    elem.dataset.animation = newType;
+  })
+};
+
+//default animation onload
 setAnimationClass(getAnimationType());
