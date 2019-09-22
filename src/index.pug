@@ -12,156 +12,158 @@ header.header
   
     //content title
     h2.content__title Click on steps, 'Prev' and 'Next' buttons
-  
-    //multisteps-form
-    .multisteps-form
     
-      //progress bar
-      .row
-      
-        .col-12.col-md-10.col-lg-8.ml-auto.mr-auto.mb-4
-        
-          .multisteps-form__progress
-            
-            button.multisteps-form__progress-btn.js-active(type="button" title="User Info") User Info
+    .container
+    
+      //multisteps-form
+      .multisteps-form
 
-            button.multisteps-form__progress-btn(type="button" title="Address") Address
-              
-            button.multisteps-form__progress-btn(type="button" title="Order Info") Order Info
-              
-            button.multisteps-form__progress-btn(type="button" title="Comments") Comments        
-      
-      //form panels
-      .row
-      
-        .col-12.col-md-10.col-lg-8.m-auto
-        
-          form.multisteps-form__form
-          
-            //single form panel
-            .multisteps-form__panel.shadow.p-4.rounded.bg-white.js-active
-              
-              h3.multisteps-form__title Your User Info
-              
-              .multisteps-form__content
-              
-                .form-row.mt-4
-                
-                  .col-12.col-sm-6
-                  
-                    input.multisteps-form__input.form-control(type="text" placeholder="First Name")
-                  
-                  .col-12.col-sm-6.mt-4.mt-sm-0
-                  
-                    input.multisteps-form__input.form-control(type="text" placeholder="Last Name")
-                    
-                .form-row.mt-4
-                
-                  .col-12.col-sm-6
-                  
-                    input.multisteps-form__input.form-control(type="text" placeholder="Login")
-                  
-                  .col-12.col-sm-6.mt-4.mt-sm-0
-                  
-                    input.multisteps-form__input.form-control(type="email" placeholder="Email")
-                    
-                .form-row.mt-4
-                
-                 .col-12.col-sm-6
-                  
-                  input.multisteps-form__input.form-control(type="password" placeholder="Password")
-                  
-                 .col-12.col-sm-6.mt-4.mt-sm-0
-                  
-                  input.multisteps-form__input.form-control(type="password" placeholder="Repeat Password")
-                  
-                .button-row.d-flex.mt-4
-                
-                  button.btn.btn-primary.ml-auto.js-btn-next(type="button" title="Next") Next
-            
-            //single form panel
-            .multisteps-form__panel.shadow.p-4.rounded.bg-white
-            
-              h3.multisteps-form__title Your Address
-              
-              .multisteps-form__content
-              
-                .form-row.mt-4
-                  
-                  .col
-                  
-                    input.multisteps-form__input.form-control(type="text" placeholder="Address 1")
-                  
-                .form-row.mt-4
-                  
-                  .col
-                    input.multisteps-form__input.form-control(type="text" placeholder="Address 2")
-                  
-                .form-row.mt-4
-                
-                  .col-12.col-sm-6
-                    
-                    input.multisteps-form__input.form-control(type="text" placeholder="City")
-                    
-                  .col-6.col-sm-3.mt-4.mt-sm-0
-                    
-                    select.multisteps-form__select.form-control
-                      option(selected) State...
-                      option ...
-                      
-                  .col-6.col-sm-3.mt-4.mt-sm-0
-                  
-                    input.multisteps-form__input.form-control(type="text" placeholder="Zip")
-                    
-                .button-row.d-flex.mt-4
-                  
-                  button.btn.btn-primary.js-btn-prev(type="button" title="Prev") Prev
-                  button.btn.btn-primary.ml-auto.js-btn-next(type="button" title="Next") Next
-              
-            //single form panel
-            .multisteps-form__panel.shadow.p-4.rounded.bg-white
-            
-              h3.multisteps-form__title Your Order Info
-              
-              .multisteps-form__content
-              
-                .row
-                  .col-12.col-sm-6.mt-4
-                
-                    .card.shadow-sm
-                      .card-body
-                    
-                        h5.card-title Item Title
-                        p.card-text Small and nice item description
-                        a.btn.btn-primary(href="#" title="Item Link") Item Link
-                        
-                  .col-12.col-sm-6.mt-4
-                
-                    .card.shadow-sm
-                      .card-body
-                    
-                        h5.card-title Item Title
-                        p.card-text Small and nice item description
-                        a.btn.btn-primary(href="#" title="Item Link") Item Link
-                                       
-                .row
-                  .button-row.d-flex.mt-4.col-12
-                  
+        //progress bar
+        .row
+
+          .col-12.col-lg-8.ml-auto.mr-auto.mb-4
+
+            .multisteps-form__progress
+
+              button.multisteps-form__progress-btn.js-active(type="button" title="User Info") User Info
+
+              button.multisteps-form__progress-btn(type="button" title="Address") Address
+
+              button.multisteps-form__progress-btn(type="button" title="Order Info") Order Info
+
+              button.multisteps-form__progress-btn(type="button" title="Comments") Comments        
+
+        //form panels
+        .row
+
+          .col-12.col-lg-8.m-auto
+
+            form.multisteps-form__form
+
+              //single form panel
+              .multisteps-form__panel.shadow.p-4.rounded.bg-white.js-active
+
+                h3.multisteps-form__title Your User Info
+
+                .multisteps-form__content
+
+                  .form-row.mt-4
+
+                    .col-12.col-sm-6
+
+                      input.multisteps-form__input.form-control(type="text" placeholder="First Name")
+
+                    .col-12.col-sm-6.mt-4.mt-sm-0
+
+                      input.multisteps-form__input.form-control(type="text" placeholder="Last Name")
+
+                  .form-row.mt-4
+
+                    .col-12.col-sm-6
+
+                      input.multisteps-form__input.form-control(type="text" placeholder="Login")
+
+                    .col-12.col-sm-6.mt-4.mt-sm-0
+
+                      input.multisteps-form__input.form-control(type="email" placeholder="Email")
+
+                  .form-row.mt-4
+
+                   .col-12.col-sm-6
+
+                    input.multisteps-form__input.form-control(type="password" placeholder="Password")
+
+                   .col-12.col-sm-6.mt-4.mt-sm-0
+
+                    input.multisteps-form__input.form-control(type="password" placeholder="Repeat Password")
+
+                  .button-row.d-flex.mt-4
+
+                    button.btn.btn-primary.ml-auto.js-btn-next(type="button" title="Next") Next
+
+              //single form panel
+              .multisteps-form__panel.shadow.p-4.rounded.bg-white
+
+                h3.multisteps-form__title Your Address
+
+                .multisteps-form__content
+
+                  .form-row.mt-4
+
+                    .col
+
+                      input.multisteps-form__input.form-control(type="text" placeholder="Address 1")
+
+                  .form-row.mt-4
+
+                    .col
+                      input.multisteps-form__input.form-control(type="text" placeholder="Address 2")
+
+                  .form-row.mt-4
+
+                    .col-12.col-sm-6
+
+                      input.multisteps-form__input.form-control(type="text" placeholder="City")
+
+                    .col-6.col-sm-3.mt-4.mt-sm-0
+
+                      select.multisteps-form__select.form-control
+                        option(selected) State...
+                        option ...
+
+                    .col-6.col-sm-3.mt-4.mt-sm-0
+
+                      input.multisteps-form__input.form-control(type="text" placeholder="Zip")
+
+                  .button-row.d-flex.mt-4
+
                     button.btn.btn-primary.js-btn-prev(type="button" title="Prev") Prev
                     button.btn.btn-primary.ml-auto.js-btn-next(type="button" title="Next") Next
-            
-            //single form panel
-            .multisteps-form__panel.shadow.p-4.rounded.bg-white
-            
-              h3.multisteps-form__title Additional Comments
-              
-              .multisteps-form__content
-              
-                .form-row.mt-4
-                
-                  textarea.multisteps-form__textarea.form-control(placeholder="Additional Comments and Requirements")
-                  
-                .button-row.d-flex.mt-4
-                
-                  button.btn.btn-primary.js-btn-prev(type="button" title="Prev") Prev
-                  button.btn.btn-success.ml-auto(type="button" title="Send") Send
+
+              //single form panel
+              .multisteps-form__panel.shadow.p-4.rounded.bg-white
+
+                h3.multisteps-form__title Your Order Info
+
+                .multisteps-form__content
+
+                  .row
+                    .col-12.col-md-6.mt-4
+
+                      .card.shadow-sm
+                        .card-body
+
+                          h5.card-title Item Title
+                          p.card-text Small and nice item description
+                          a.btn.btn-primary(href="#" title="Item Link") Item Link
+
+                    .col-12.col-md-6.mt-4
+
+                      .card.shadow-sm
+                        .card-body
+
+                          h5.card-title Item Title
+                          p.card-text Small and nice item description
+                          a.btn.btn-primary(href="#" title="Item Link") Item Link
+
+                  .row
+                    .button-row.d-flex.mt-4.col-12
+
+                      button.btn.btn-primary.js-btn-prev(type="button" title="Prev") Prev
+                      button.btn.btn-primary.ml-auto.js-btn-next(type="button" title="Next") Next
+
+              //single form panel
+              .multisteps-form__panel.shadow.p-4.rounded.bg-white
+
+                h3.multisteps-form__title Additional Comments
+
+                .multisteps-form__content
+
+                  .form-row.mt-4
+
+                    textarea.multisteps-form__textarea.form-control(placeholder="Additional Comments and Requirements")
+
+                  .button-row.d-flex.mt-4
+
+                    button.btn.btn-primary.js-btn-prev(type="button" title="Prev") Prev
+                    button.btn.btn-success.ml-auto(type="button" title="Send") Send
