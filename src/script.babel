@@ -4,6 +4,7 @@ const DOMstrings = {
   stepsBtns: document.querySelectorAll(`.multisteps-form__progress-btn`),
   stepsBar: document.querySelector('.multisteps-form__progress'),
   stepsForm: document.querySelector('.multisteps-form__form'),
+  stepsFormTextareas: document.querySelectorAll('.multisteps-form__textarea'),
   stepFormPanelClass: 'multisteps-form__panel',
   stepFormPanels: document.querySelectorAll('.multisteps-form__panel'),
   stepPrevBtnClass: 'js-btn-prev',
@@ -161,4 +162,6 @@ DOMstrings.stepsForm.addEventListener('click', e => {
 
 //SETTING PROPER FORM HEIGHT ONLOAD
 window.addEventListener('load', setFormHeight, false);
+
+//SETTING PROPER FORM HEIGHT ONRESIZE
 window.addEventListener('resize', setFormHeight, false);
