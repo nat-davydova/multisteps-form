@@ -165,3 +165,9 @@ window.addEventListener('load', setFormHeight, false);
 
 //SETTING PROPER FORM HEIGHT ONRESIZE
 window.addEventListener('resize', setFormHeight, false);
+
+//changing animation via animation select !!!YOU DON'T NEED THIS CODE (if you want to change animation type, just change form panels data-attr)
+
+const getAnimationType = () => DOMstrings.stepFormPanels[0].dataset.animation;
+
+console.log(getAnimationType());

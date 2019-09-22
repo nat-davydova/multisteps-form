@@ -21,14 +21,14 @@ header.header
           .col-5.m-auto
 
             select.pick-animation__select.form-control
-              option(selected) ScaleIn
-              option SlideHorz
-              option SlideVert
-              option Opacity
-              option ScaleOut
+              option(value="scaleIn" selected) ScaleIn
+              option(value="slideHorz") SlideHorz
+              option(value="slideHorz") SlideVert
+              option(value="fadeIn") FadeIn
+              option(value="scaleOut") ScaleOut
     
       //content title
-      h2.content__title Click on steps, 'Prev' and 'Next' buttons
+      h2.content__title Click on steps or 'Prev' and 'Next' buttons
     
     .container
     
@@ -58,7 +58,7 @@ header.header
             form.multisteps-form__form
 
               //single form panel
-              .multisteps-form__panel.shadow.p-4.rounded.bg-white.js-active
+              .multisteps-form__panel.shadow.p-4.rounded.bg-white.js-active(data-animation="scaleIn")
 
                 h3.multisteps-form__title Your User Info
 
@@ -99,7 +99,7 @@ header.header
                     button.btn.btn-primary.ml-auto.js-btn-next(type="button" title="Next") Next
 
               //single form panel
-              .multisteps-form__panel.shadow.p-4.rounded.bg-white
+              .multisteps-form__panel.shadow.p-4.rounded.bg-white(data-animation="scaleIn")
 
                 h3.multisteps-form__title Your Address
 
@@ -138,7 +138,7 @@ header.header
                     button.btn.btn-primary.ml-auto.js-btn-next(type="button" title="Next") Next
 
               //single form panel
-              .multisteps-form__panel.shadow.p-4.rounded.bg-white
+              .multisteps-form__panel.shadow.p-4.rounded.bg-white(data-animation="scaleIn")
 
                 h3.multisteps-form__title Your Order Info
 
@@ -170,7 +170,7 @@ header.header
                       button.btn.btn-primary.ml-auto.js-btn-next(type="button" title="Next") Next
 
               //single form panel
-              .multisteps-form__panel.shadow.p-4.rounded.bg-white
+              .multisteps-form__panel.shadow.p-4.rounded.bg-white(data-animation="scaleIn")
 
                 h3.multisteps-form__title Additional Comments
 
