@@ -170,4 +170,10 @@ window.addEventListener('resize', setFormHeight, false);
 
 const getAnimationType = () => DOMstrings.stepFormPanels[0].dataset.animation;
 
-console.log(getAnimationType());
+const setAnimationClass = animationType => {
+  DOMstrings.stepFormPanels.forEach(elem => {
+    elem.classList.add(`${DOMstrings.stepFormPanelClass}--${animationType}`);
+  });
+};
+
+setAnimationClass(getAnimationType());
