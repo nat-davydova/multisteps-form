@@ -1,4 +1,20 @@
 # Multi Step Bootstrap Form with animations
- _A Pen created at CodePen.io. Original URL: [https://codepen.io/nat-davydova/pen/71eb80e49a9ff06abb0f2c5fd5f189ed](https://codepen.io/nat-davydova/pen/71eb80e49a9ff06abb0f2c5fd5f189ed).
+
+[Check the demo](https://codepen.io/nat-davydova/pen/PoYXZxg)
+
+- Pug/HTML
+- Bootstrap 4.1.3
+- SCSS/CSS
+- JS (ES6)/ Babel
+
+## Changing animation type
+
+- change `data-animation` attributes value (on `.multisteps-form__panel`) to your preferred animation type;
+- available animation values:
+  - scaleIn
+  - scaleOut
+  - slideHorz
+  - slideVert
+  - fadeIn
 
  
