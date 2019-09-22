@@ -35,7 +35,9 @@ const findParent = (elem, parentClass) => {
 };
 
 //get active button step number
-const getActiveStep = elem => elem.dataset.step;
+const getActiveStep = elem => {
+  return Array.from(DOMstrings.stepsBtns).indexOf(elem);
+};
 
 //set all steps before clicked (and clicked too) to active
 const setActiveStep = (activeStepNum) => {
@@ -46,7 +48,7 @@ const setActiveStep = (activeStepNum) => {
   //set picked items to active
   DOMstrings.stepsBtns.forEach((elem, index) => {
     
-    if(index <= (activeStepNum - 1) ) {
+    if(index <= (activeStepNum) ) {
       elem.classList.add('js-active');
     }
     
@@ -80,7 +82,7 @@ const setActivePanel = activePanelNum => {
   
   //show active panel
   DOMstrings.stepFormPanels.forEach((elem, index) => {
-    if(index === (activePanelNum - 1)) {
+    if(index === (activePanelNum)) {
       
       elem.classList.add('js-active');
    
@@ -140,7 +142,7 @@ DOMstrings.stepsForm.addEventListener('click', e => {
   //find active panel
   const activePanel = findParent(eventTarget, `${DOMstrings.stepFormPanelClass}`);
   
-  let activePanelNum = Array.from(DOMstrings.stepFormPanels).indexOf(activePanel) + 1;
+  let activePanelNum = Array.from(DOMstrings.stepFormPanels).indexOf(activePanel);
   
   //set active step and active panel onclick
   if(eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`)) {
