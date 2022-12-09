@@ -2,7 +2,7 @@
 
 [Check the demo](https://codepen.io/nat-davydova/pen/PoYXZxg)
 
-<img src="http://natali-davydova.me/assets/img/multisteps-form/sample.jpg" width="450" />
+<img src="http://eisenpar.com/portfolio2/assets/img/multisteps-form/sample.jpg" width="450" />
 
 - Pug/HTML
 - Bootstrap 4.1.3
